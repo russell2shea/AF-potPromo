@@ -1,0 +1,82 @@
+/* Maps */
+
+$page-colors: (
+  c-white: #fff,
+  c-green: #3b5e21,
+  c-green2: #345220,
+  c-orange: #b14902,
+  c-darkgrey: #222,
+);
+$allDataTypes:(
+	astring: string,
+	anumber: 808,
+	alist: ( 10px 0 10px 0),
+	aboolean: true,
+	colors: #fff,
+	nullify: null,
+	NestedMap:(width: 100%, height: 50%),
+);
+
+
+
+
+
+.combine{
+	content: inspect( map-merge($page-colors, $allDataTypes));
+}
+
+
+
+.getGreen{
+	color: map-get($page-colors, c-green);
+}
+
+
+
+
+
+
+
+
+@each $page-color, $color in $page-colors{
+  .bgc-#{$page-color} {
+    background-color: $color;
+  }
+  .c-#{$page-color} {
+    background-color: $color;
+  }
+}
+
+
+
+
+.removeKey{
+	content: inspect( map-remove($allDataTypes, NestedMap));
+}
+
+.mapkeys{
+	content: map-keys($allDataTypes);
+}
+
+
+.checkKey{
+	content: inspect( map-has-key($allDataTypes, astring));
+	content: inspect( map-has-key($allDataTypes, jerkFace));
+}
+
+$multiple:(
+	colorblack: (#000, #222, #999),
+	
+);
+@each $name, $pair in $multiple{
+  .c#{$name} {
+    background-color: nth($pair, 2);
+	color: nth($pair, 1);
+  }
+
+}
+
+
+
+
+/* Maps */

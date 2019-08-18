@@ -1,0 +1,665 @@
+
+/* Variables */
+
+ $white: #fff;
+$green: #3b5e21;
+$green2: #345220;
+$orange: #b14902;
+$darkgrey: #222;
+
+
+
+$fontface: 'Open Sans Condensed', sans-serif;
+$noncondensed: 'Open Sans', sans-serif;
+
+$basesize1: 1.6rem;
+/* / Variables */
+
+
+/* to extend */
+%boldIt{
+  font-weight: bold
+}
+%leftJustify{
+  text-align: left;
+}
+%centerJustify{
+  text-align: center;
+}
+%centering{
+  margin: 0 auto;
+  display: block;
+}
+%font2{
+  font-family: $fontface;
+}
+%font1{
+  font-family: $noncondensed;
+}
+%basesize{
+  font-size: $basesize1;
+} 
+%center {
+  @extend %centerJustify;
+  @extend %centering;
+}
+
+/* / to extend */
+
+
+/* Mixins */
+  @mixin martopbot($martop, $marbot){
+    margin-top: $martop;
+    margin-bottom: $marbot;
+  }
+
+@mixin padtopbot($padtop, $padbot){
+  padding-top: $padtop;
+  padding-bottom: $padbot;
+}
+%paraSpace{
+  @include martopbot(1rem, 1rem);
+}
+
+@mixin pararule{
+  background-attachment: fixed;
+  @extend %paraSpace;
+}
+
+
+@mixin boldFontFace{
+  @extend %font2;
+  @extend %boldIt;
+}
+/* / Mixins */
+
+
+/* Global */
+
+body {
+  background: $white;
+}
+
+
+
+h3 {
+  @include boldFontFace;
+}
+
+.darkGreen {
+  color: $green;
+}
+
+.whiteBg {
+  background: $white;
+}
+
+
+
+.wrapper-md {
+  max-width: 900px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: left;
+}
+
+.wrapper-md p, ul, ol {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  @extend %font1;
+}
+
+div ul, ol {
+  margin: 1.25em 6.25em 1.25em 2.5em;
+  @extend %boldIt;
+}
+/* Body */
+.greenbox{
+  border: 2px solid $green2;
+  color: $green2;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+.greenbox h3{
+  @include martopbot(40px, 30px);
+  font-size: 3.5rem;
+  @include boldFontFace;
+  margin-left: 0px;
+  padding-left: 0px;
+  @extend %leftJustify;
+}
+.moveImg{
+  margin-top: 2.2rem;
+}
+.riskfree h3{
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-weight: 900;
+  @extend %leftJustify;
+  color: $white;
+  text-shadow: 1px 1px $darkgrey;
+  font-size: 4rem;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.famshot{
+  width: 100%;
+}
+.limey img{
+  max-width: 220px;
+}
+.limey{
+  background: #AFCD53;
+  @include padtopbot(20px, 20px);
+}
+.limey p{
+  @extend %font2;
+  @extend %basesize;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.insidelimey {
+    margin-top: 4rem;
+    margin-left: -100px;
+}
+
+.limey h3{
+  margin-top: 20px;
+  padding-top: 0px;
+  @include boldFontFace;
+  @extend %leftJustify;
+  font-size: 3rem;
+}
+.checkmate{
+  color: $white;
+  @extend %leftJustify;
+  @extend %boldIt;
+  @include martopbot(1rem, 1rem);
+  @include padtopbot(20px, 20px);
+}
+.checkmate p{
+  margin-left: -35px;
+  @extend %basesize;
+}
+.report{
+  width: 100%;
+}
+.greenBg {
+  background: $green2;
+  @include padtopbot(2rem, 2rem);
+}
+
+.requirementimg {
+  max-width: 186.5px;
+}
+
+.requiretext {
+  color: $green2;
+  font-size: 5rem;
+  border-top: solid 2px $green2;
+  border-bottom: solid 2px $green2;
+  width: 85%;
+  margin-right: 0px;
+  right: -50%;
+  margin-top: 40px;
+  margin-left: 15%;
+}
+
+.section10 {
+  padding-top: 2rem;
+}
+
+.quotebox {
+  border: solid 2px #fff;
+  padding: 10px;
+  @extend %boldIt;
+  max-width: 750px;
+  @include martopbot(2rem, 1rem);
+ @extend %center;
+}
+
+.blueprint {
+  background: #006285;
+  border-top: solid 7px $white;
+  color: $white;
+}
+
+.blueBg {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-BGblueprint_1016_001.jpg') no-repeat top;
+  background-size: 100% auto;
+}
+
+.whiteborder {
+  border: 2px solid $white;
+  padding: 40px;
+  max-width: 750px;
+  @extend %center;
+}
+
+.whiteborder p {
+  @extend %leftJustify;
+}
+
+.orangeBg {
+  background: $orange;
+}
+
+.section8 h3, .section9 h3, .section9-b h3, .section9-c h3 {
+  @extend %font2;
+  font-weight: 400;
+  font-size: 3.5rem;
+  color: $white;
+}
+
+.section8 {
+  color: $white;
+  padding-bottom: 2rem;
+}
+
+.stocklist {
+  color: $white;
+  @extend %boldIt;
+  border-left: 2px solid $white;
+  padding-left: 20px;
+}
+
+.stocklist ul {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.stocklist li {
+  padding-left: 20px;
+}
+
+.bignumber {
+  font-size: 2.5rem;
+}
+
+.section6 {
+  background: $orange;
+  @include padtopbot(3rem, 3rem);
+}
+
+
+
+.backgroudnimg2 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-BGicon_1016_001.png') no-repeat right;
+  background-size: 35% auto;
+}
+
+.chart {
+  width: 98%;
+}
+
+.chart-paper {
+  width: 95%;
+}
+
+.greenh3 h3 {
+  color: $green;
+  font-size: 2.8rem;
+  margin-left: 0px;
+  @extend %font2;
+  font-weight: 900;
+  @extend %leftJustify;
+}
+
+.whiteh3 h3 {
+  color: $white;
+  font-size: 2.8rem;
+  margin-left: 0px;
+  @extend %font2;
+  font-weight: 900;
+  @extend %leftJustify;
+}
+.para9 p{
+ @extend %centerJustify;
+  font-size: 2rem;
+  color: $white;
+  text-shadow: 1px 1px $darkgrey;
+}
+
+
+.para10 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_011.jpg') no-repeat center;
+  @include pararule;
+  padding-bottom: 1rem;
+}
+.para9 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_009.jpg') no-repeat center;
+  @include pararule;
+  padding-bottom: 1rem;
+}
+.para8 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_008.jpg') no-repeat center;
+  @include pararule;
+}
+.para7 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_007.jpg
+') no-repeat center;
+  @include pararule;
+}
+.para6 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_006.jpg') no-repeat center;
+  @include pararule;
+}
+
+.para5 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_005.jpg') no-repeat center;
+  @include pararule;
+}
+
+.para4 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_004.jpg') no-repeat center;
+  background-attachment: fixed;
+  margin-top: 1rem;
+}
+
+.para3 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_003.jpg');
+  @include pararule;
+}
+
+.para2 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_002.jpg');
+  @include pararule;
+}
+
+.para1 {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Parallax_1016_001.jpg');
+  @include pararule;
+}
+
+.para1 h3, .para2 h3, .para3 h3, .para4 h3, .para5 h3, .para6 h3, .para7 h3, .para8 h3, .para9 h3, .para10 h3 {
+  color: $white;
+  text-shadow: 1px 1px $darkgrey;
+  font-size: 4rem;
+  @include padtopbot(80px, 80px);
+  @extend %boldIt;
+  @include martopbot(0px, 0px);
+}
+.para9 h3{
+    border-bottom: 2px solid $white;
+    padding-bottom: 40px;
+    max-width: 600px;
+    @extend %center;
+}
+ul.orangeCheck {
+  list-style-image: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Check_1016_001.png');
+}
+
+.orangeCheck li {
+  line-height: 1.5;
+  margin-top: .1rem;
+}
+
+.not {
+  font-size: 2.2rem;
+  color: #D55700;
+}
+
+.greenstripe {
+  @include padtopbot(10px, 10px);
+  color: $white;
+  margin-left: -100%;
+  background: rgba(39,39,39,1);
+  background: -moz-linear-gradient(left, rgba(39,39,39,1) 0%, rgba(50,89,22,1) 59%, rgba(50,89,22,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(39,39,39,1)), color-stop(59%, rgba(50,89,22,1)), color-stop(100%, rgba(50,89,22,1)));
+  background: -webkit-linear-gradient(left, rgba(39,39,39,1) 0%, rgba(50,89,22,1) 59%, rgba(50,89,22,1) 100%);
+  background: -o-linear-gradient(left, rgba(39,39,39,1) 0%, rgba(50,89,22,1) 59%, rgba(50,89,22,1) 100%);
+  background: -ms-linear-gradient(left, rgba(39,39,39,1) 0%, rgba(50,89,22,1) 59%, rgba(50,89,22,1) 100%);
+  background: linear-gradient(to right, rgba(39,39,39,1) 0%, rgba(50,89,22,1) 59%, rgba(50,89,22,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#272727', endColorstr='#325916', GradientType=1 );
+}
+
+.greenstripe ul {
+  font-size: 1.35rem;
+}
+
+.inner-wrapper {
+  margin-left: 50%;
+}
+
+.sectoin1 {
+  margin-top: 1.5rem;
+}
+/* / Body */
+/*   Headline /*/
+
+.deck {
+  background: rgba(177, 73, 2, 0.6);
+  @include padtopbot(5px, 5px);
+}
+
+.deck p {
+  @extend %basesize;
+  font-style: italic;
+  @extend %leftJustify;
+}
+
+.eyebrow {
+  color: $white;
+  background: $orange;
+  margin: 0px;
+  padding: 0px;
+ @extend %centerJustify;
+}
+
+.eyebrow p {
+  @extend %font1;
+  font-weight: 400;
+  margin: 0px;
+  @include padtopbot(5px, 5px);
+  @extend %basesize;
+}
+
+.headline {
+  background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Headline_1016_001.jpg')  no-repeat center center;
+  -webkit-background-size: cover;
+  color: #fff;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.headline-wrap {
+  margin-left: 40%;
+}
+
+.headline h1 {
+  @include martopbot(0px, 1rem);
+  @extend %font2;
+  @extend %boldIt;
+  @extend %leftJustify;
+  font-size: 3.5rem;
+  font-weight: 900;
+  @include padtopbot(1rem, 0px);
+}
+
+.headline h2 {
+  margin-top: 0px;
+  padding-top: 0px;
+  @extend %font1;
+  @extend %leftJustify;
+  font-weight: 400;
+  font-size: 2.9rem;
+}
+
+@media only screen and (max-width: 1006px) {
+  .hidebr2 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .headline-wrap {
+    margin-left: 0%;
+  }
+
+  .headline h1, .headline h2, .deck p {
+     text-align: center;
+  }
+
+  .hidebr2 {
+    display: block;
+  }
+
+  .headline {
+    background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-Headline_1016_001.jpg')  no-repeat;
+    background-size: auto 100%;
+    padding-bottom: 0;
+  }
+
+  .deck {
+    background: rgba(177, 73, 2, 1);
+    width: 100%;
+  }
+
+  .requiretext {
+    width: 75%;
+    margin-right: 0px;
+    right: 0px;
+    margin-left: 20%;
+  }
+
+  .requiretext p {
+     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .headline h2 {
+    font-size: 2rem;
+  }
+
+  .eyebrow p {
+    font-size: 1.3rem;
+  }
+
+  .deck p {
+    font-size: 1.3rem;
+  }
+
+  .greenstripe {
+    margin-left: 0px;
+  }
+
+  .inner-wrapper {
+    margin-left: 5%;
+  }
+
+  .orangeCheck li {
+    margin: .25em -3.25em .25em .25em;
+  }
+
+  .para1, .para2, .para3, .para3, .para4, .para5, .para6, .para7, .para8, .para9, .para10 {
+    background-attachment: scroll;
+  }
+
+  ol {
+    margin-left: 0px;
+  }
+
+  .numbers {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  .hideat700 {
+    display: none;
+  }
+
+  .requiretext {
+    width: 100%;
+    margin-right: 0px;
+    right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .greenh3 h3, .whiteh3 h3 {
+    text-align: center;
+  }
+
+  .stocklist {
+    font-weight: bold;
+    border-top: 2px solid $white;
+    border-bottom: 2px solid $white;
+    padding-left: 0px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    border-left: none;
+  }
+
+  .stocklist li {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .section8 h3, .section9 h3, .section9-b h3, .section9-c h3 {
+    font-size: 2.2rem;
+  }
+
+  .whiteborder {
+    padding: 15px;
+  }
+
+  .backgroudnimg2 {
+    background: url('https://research.agorafinancial.com/reports/TEK/Pot-iHTML-1016/TEK-Pot-BGicon_1016_001.png') no-repeat right;
+    background-size: 85% auto;
+  }
+}
+
+@media only screen and (max-width: 524px) {
+  .headline h2 {
+    font-size: 1.8rem;
+  }
+
+  .hidebr4 {
+    display: none;
+  }
+
+  .headline h1 {
+    font-size: 2.8rem;
+  }
+
+  ul.orangeCheck {
+    list-style-image: none;
+    list-style: disc;
+  }
+
+  .orangeCheck {
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .orangeCheck li {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .wrapper-md {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .greenBg {
+  @include martopbot(1rem, 1rem);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+ .para1 h3, .para2 h3, .para3 h3, .para4 h3, .para5 h3, .para6 h3, .para7 h3, .para8 h3, .para9 h3, .para10 h3 {
+    font-size: 3rem;
+  }
+
+  .greenh3 h3 {
+    font-size: 2.5rem;
+  }
+
+  .whitehe h3 {
+    font-size: 2.5rem;
+  }
+}
